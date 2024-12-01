@@ -24,16 +24,14 @@ namespace jhedgostBK.Configuration.DataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Cambié el nombre de la tabla a 'User'
             modelBuilder.Entity<UserEntity>().ToTable("User");
 
-            // Aquí definimos que la clave primaria es 'Id'
             modelBuilder.Entity<UserEntity>().HasKey(u => u.Id);
 
             modelBuilder.Entity<UserEntity>()
                 .Property(u => u.Name)
                 .HasMaxLength(50)
-                .IsRequired(); // Ejemplo de cómo configurar propiedades de la entidad
+                .IsRequired(); 
         }
 
 
