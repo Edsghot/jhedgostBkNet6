@@ -19,7 +19,15 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Modules\User\Application\" />
+    <Folder Include="Modules\Company\" />
+    <Folder Include="Modules\CustomerTestimonials\" />
+    <Folder Include="Modules\EmployeeTestimonials\" />
+    <Folder Include="Modules\Payment\" />
+    <Folder Include="Modules\Projects\" />
+    <Folder Include="Modules\Quotations\" />
+    <Folder Include="Modules\Services\" />
+    <Folder Include="Modules\Team\" />
+    <Folder Include="Modules\Technology\" />
   </ItemGroup>
 
 </Project>

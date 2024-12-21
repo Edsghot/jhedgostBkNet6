@@ -1,4 +1,5 @@
 ﻿using System;
+using jhedgostBK.Configuration.DataBase.EntityConfigurations;
 using jhedgostBK.Modules.User.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,14 +25,7 @@ namespace jhedgostBK.Configuration.DataBase
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<UserEntity>().ToTable("User");
-
-            modelBuilder.Entity<UserEntity>().HasKey(u => u.Id);
-
-            modelBuilder.Entity<UserEntity>()
-                .Property(u => u.Name)
-                .HasMaxLength(50)
-                .IsRequired(); 
+            modelBuilder.ApplyConfiguration(new UserEntityConfiguration());
         }
 
 
