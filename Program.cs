@@ -2,6 +2,7 @@ using jhedgostBK.Configuration.DataBase;
 using jhedgostBK.Modules.User.Application.Adapter;
 using jhedgostBK.Modules.User.Application.Port;
 using jhedgostBK.Modules.User.Domain.IRepository;
+using jhedgostBK.Modules.User.Infraestructure.Presenter;
 using jhedgostBK.Modules.User.Infraestructure.Repository;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,7 +19,7 @@ builder.Services.AddDbContext<MySqlContext>(options =>
     new MySqlServerVersion(new Version(8, 0, 21))));
 builder.Services.AddScoped<IUserInputPort, UserAdapter>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-var app = builder.Build();
+builder.Services.AddScoped<IUserOutPort, UserPresenter>();var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

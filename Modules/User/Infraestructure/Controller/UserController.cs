@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using jhedgostBK.Model.Dtos.User;
+using jhedgostBK.Modules.User.Application.Port;
+using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -8,11 +10,27 @@ namespace jhedgostBK.Modules.User.Infraestructure.Controller
     [ApiController]
     public class UserController : ControllerBase
     {
-        // GET: api/<UserController>
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IUserInputPort _userInputPort;
+        private readonly IUserOutPort _userOutPort;
+
+        public UserController(IUserInputPort userInputPort, IUserOutPort userOutPort)
         {
-            return new string[] { "value1", "value2" };
+            _userInputPort = userInputPort;
+            _userOutPort = userOutPort;            
+        }
+        
+        [HttpGet]
+        public async Task<IActionResult> Get()
+        {
+            await _userInputPort.GetAllUsersAsync();
+            var response = _userOutPort.GetResponse;
+
+            if (response is null || !response.Success)
+            {
+                return NotFound(new { Message = response?.Message ?? "User not found" });
+            }
+
+            return Ok(response);
         }
 
         // GET api/<UserController>/5

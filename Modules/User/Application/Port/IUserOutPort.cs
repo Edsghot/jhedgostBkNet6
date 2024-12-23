@@ -1,6 +1,9 @@
-﻿namespace jhedgostBK.Modules.User.Application.Port;
+﻿using jhedgostBK.Configuration.Shared;
+using jhedgostBK.Model.Dtos.User;
 
-public interface IUserOutPort
+namespace jhedgostBK.Modules.User.Application.Port;
+
+public interface IUserOutPort : IBasePresenter<object>
 {
-    
+    void GetAllUsersAsync(IEnumerable<UserDto> data);
 }
