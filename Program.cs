@@ -1,4 +1,9 @@
 using jhedgostBK.Configuration.DataBase;
+using jhedgostBK.Modules.CustomerTestimonials.Application.Adapter;
+using jhedgostBK.Modules.CustomerTestimonials.Application.Ports;
+using jhedgostBK.Modules.CustomerTestimonials.Domain.IRepository;
+using jhedgostBK.Modules.CustomerTestimonials.Infraestructure.Presenter;
+using jhedgostBK.Modules.CustomerTestimonials.Infraestructure.Repository;
 using jhedgostBK.Modules.User.Application.Adapter;
 using jhedgostBK.Modules.User.Application.Port;
 using jhedgostBK.Modules.User.Domain.IRepository;
@@ -19,7 +24,17 @@ builder.Services.AddDbContext<MySqlContext>(options =>
     new MySqlServerVersion(new Version(8, 0, 21))));
 builder.Services.AddScoped<IUserInputPort, UserAdapter>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IUserOutPort, UserPresenter>();var app = builder.Build();
+builder.Services.AddScoped<IUserOutPort, UserPresenter>();
+
+builder.Services.AddScoped<ICustomerTInputPort, CustomerTestimonialsAdapter>();
+builder.Services.AddScoped<ICustomerTRepository, CustomerTRepository>();
+builder.Services.AddScoped<ICustomerTOutPort, CustomerTPresenter>();
+
+
+
+
+
+var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -19,14 +19,19 @@
 
   <ItemGroup>
     <Folder Include="Modules\Company\" />
-    <Folder Include="Modules\CustomerTestimonials\" />
-    <Folder Include="Modules\EmployeeTestimonials\" />
+    <Folder Include="Modules\Image\Application\" />
+    <Folder Include="Modules\Image\Domain\" />
     <Folder Include="Modules\Payment\" />
-    <Folder Include="Modules\Projects\" />
+    <Folder Include="Modules\Projects\Application\" />
+    <Folder Include="Modules\Projects\Infraestructure\" />
     <Folder Include="Modules\Quotations\" />
-    <Folder Include="Modules\Services\" />
-    <Folder Include="Modules\Team\" />
-    <Folder Include="Modules\Technology\" />
+    <Folder Include="Modules\Services\Application\" />
+    <Folder Include="Modules\Services\Infraestructure\" />
+    <Folder Include="Modules\Team\Application\" />
+    <Folder Include="Modules\Team\Infraestructure\" />
+    <Folder Include="Modules\Technology\Application\" />
+    <Folder Include="Modules\Technology\Domain\" />
+    <Folder Include="Modules\Technology\Infraestructure\" />
   </ItemGroup>
 
 </Project>
