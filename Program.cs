@@ -4,6 +4,10 @@ using jhedgostBK.Modules.CustomerTestimonials.Application.Ports;
 using jhedgostBK.Modules.CustomerTestimonials.Domain.IRepository;
 using jhedgostBK.Modules.CustomerTestimonials.Infraestructure.Presenter;
 using jhedgostBK.Modules.CustomerTestimonials.Infraestructure.Repository;
+using jhedgostBK.Modules.EmployeeTestimonials.Application.Adapter;
+using jhedgostBK.Modules.EmployeeTestimonials.Application.Port;
+using jhedgostBK.Modules.EmployeeTestimonials.Infraestructure.Presenter;
+using jhedgostBK.Modules.EmployeeTestimonials.Infraestructure.Repository;
 using jhedgostBK.Modules.User.Application.Adapter;
 using jhedgostBK.Modules.User.Application.Port;
 using jhedgostBK.Modules.User.Domain.IRepository;
@@ -29,6 +33,10 @@ builder.Services.AddScoped<IUserOutPort, UserPresenter>();
 builder.Services.AddScoped<ICustomerTInputPort, CustomerTestimonialsAdapter>();
 builder.Services.AddScoped<ICustomerTRepository, CustomerTRepository>();
 builder.Services.AddScoped<ICustomerTOutPort, CustomerTPresenter>();
+
+builder.Services.AddScoped<IEmployeeTInputPort, EmployeeTAdapter>();
+builder.Services.AddScoped<IEmployeeTRepository, EmployeeTRepository>();
+builder.Services.AddScoped<IEmployeeTOutPort, EmployeeTPresenter>();
 
 
 

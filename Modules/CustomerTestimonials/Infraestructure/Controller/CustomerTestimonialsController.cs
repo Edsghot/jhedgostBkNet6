@@ -26,11 +26,6 @@ namespace jhedgostBK.Modules.CustomerTestimonials.Infraestructure.Controller
             await _userInputPort.GetAllAsync();
             var response = _userOutPort.GetResponse;
 
-            if (response is null || !response.Success)
-            {
-                return NotFound(new { Message = response?.Message ?? "customer not found" });
-            }
-
             return Ok(response);
         }
 

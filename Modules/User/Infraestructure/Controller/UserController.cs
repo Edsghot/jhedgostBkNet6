@@ -25,11 +25,6 @@ namespace jhedgostBK.Modules.User.Infraestructure.Controller
             await _userInputPort.GetAllUsersAsync();
             var response = _userOutPort.GetResponse;
 
-            if (response is null || !response.Success)
-            {
-                return NotFound(new { Message = response?.Message ?? "User not found" });
-            }
-
             return Ok(response);
         }
 

@@ -26,10 +26,7 @@ namespace jhedgostBK.Modules.EmployeeTestimonials.Infraestructure.Controller
             await _employeeTInputPort.GetAllAsync();
             var response = _employeeOutPort.GetResponse;
 
-            if (response is null || !response.Success)
-            {
-                return NotFound(new { Message = response?.Message ?? "Employee testimonials not found" });
-            }
+          
 
             return Ok(response);
         }
