@@ -1,30 +1,31 @@
-﻿using jhedgostBK.Modules.EmployeeTestimonials.Application.Port;
+﻿using jhedgostBK.Model.Dtos.User;
+using jhedgostBK.Modules.EmployeeTestimonials.Application.Port;
+using jhedgostBK.Modules.services.Application.Port;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace jhedgostBK.Modules.EmployeeTestimonials.Infraestructure.Controller
+namespace jhedgostBK.Modules.Services.Infraestructure.Controller
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeTestimonialsController : ControllerBase
+    public class ServiceController : ControllerBase
     {
-        private readonly IEmployeeTInputPort _employeeTInputPort;
-        private readonly IEmployeeTOutPort _employeeOutPort;
+        private readonly IServiceInputPort _serviceInputPort;
+        private readonly IServiceOutPort _serviceOutPort;
 
-        public EmployeeTestimonialsController(IEmployeeTInputPort employeeTInputPort, IEmployeeTOutPort employeeOutPort)
+        public ServiceController(IServiceInputPort serviceInputPort, IServiceOutPort serviceOutPort)
         {
-            _employeeTInputPort = employeeTInputPort;
-            _employeeOutPort = employeeOutPort;            
+            _serviceInputPort = serviceInputPort;
+            _serviceOutPort = serviceOutPort;            
         }
         
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAll()
         {
-            await _employeeTInputPort.GetAllAsync();
-            var response = _employeeOutPort.GetResponse;
+            await _serviceInputPort.GetAllAsync();
 
-            return Ok(response);
+            return Ok(_serviceOutPort.GetResponse);
         }
 
         // GET api/<UserController>/5

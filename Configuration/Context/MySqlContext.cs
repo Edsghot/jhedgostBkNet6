@@ -2,6 +2,7 @@
 using jhedgostBK.Configuration.DataBase.EntityConfigurations;
 using jhedgostBK.Modules.CustomerTestimonials.Domain.Entity;
 using jhedgostBK.Modules.EmployeeTestimonials.Domain.Entity;
+using jhedgostBK.Modules.Services.Domain.Entity;
 using jhedgostBK.Modules.User.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +13,7 @@ namespace jhedgostBK.Configuration.DataBase
         public DbSet<UserEntity> Users { get; set; }
         public DbSet<CustomerTestimonialsEntity> CustomerTestimonials { get; set; }
         public DbSet<EmployeeTestimonialsEntity> EmployeeTestimonials { get; set; }
+        public DbSet<ServiceEntity> Services { get; set; }
 
         public MySqlContext(DbContextOptions<MySqlContext> options) : base(options)
         {

@@ -6,8 +6,14 @@ using jhedgostBK.Modules.CustomerTestimonials.Infraestructure.Presenter;
 using jhedgostBK.Modules.CustomerTestimonials.Infraestructure.Repository;
 using jhedgostBK.Modules.EmployeeTestimonials.Application.Adapter;
 using jhedgostBK.Modules.EmployeeTestimonials.Application.Port;
+using jhedgostBK.Modules.EmployeeTestimonials.Domain.IRepository;
 using jhedgostBK.Modules.EmployeeTestimonials.Infraestructure.Presenter;
 using jhedgostBK.Modules.EmployeeTestimonials.Infraestructure.Repository;
+using jhedgostBK.Modules.Services.Application.Adapter;
+using jhedgostBK.Modules.services.Application.Port;
+using jhedgostBK.Modules.services.Domain.IRepository;
+using jhedgostBK.Modules.Services.Infraestructure.Presenter;
+using jhedgostBK.Modules.Services.Infraestructure.Repository;
 using jhedgostBK.Modules.User.Application.Adapter;
 using jhedgostBK.Modules.User.Application.Port;
 using jhedgostBK.Modules.User.Domain.IRepository;
@@ -38,8 +44,9 @@ builder.Services.AddScoped<IEmployeeTInputPort, EmployeeTAdapter>();
 builder.Services.AddScoped<IEmployeeTRepository, EmployeeTRepository>();
 builder.Services.AddScoped<IEmployeeTOutPort, EmployeeTPresenter>();
 
-
-
+builder.Services.AddScoped<IServiceInputPort, ServicesAdapter>();
+builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+builder.Services.AddScoped<IServiceOutPort, ServicePresenter>();
 
 
 var app = builder.Build();

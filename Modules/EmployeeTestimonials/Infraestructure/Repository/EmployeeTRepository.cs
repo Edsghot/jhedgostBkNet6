@@ -1,6 +1,7 @@
 ﻿using jhedgostBK.Configuration.Context.Repository;
 using jhedgostBK.Configuration.DataBase;
 using jhedgostBK.Modules.EmployeeTestimonials.Domain.Entity;
+using jhedgostBK.Modules.EmployeeTestimonials.Domain.IRepository;
 using jhedgostBK.Modules.User.Domain.Entity;
 using jhedgostBK.Modules.User.Domain.IRepository;
 using Microsoft.EntityFrameworkCore;

@@ -1,10 +1,7 @@
 ﻿using jhedgostBK.Model.Dtos.EmployeeT;
-using jhedgostBK.Model.Dtos.User;
 using jhedgostBK.Modules.EmployeeTestimonials.Application.Port;
 using jhedgostBK.Modules.EmployeeTestimonials.Domain.Entity;
-using jhedgostBK.Modules.User.Application.Port;
-using jhedgostBK.Modules.User.Domain.Entity;
-using jhedgostBK.Modules.User.Domain.IRepository;
+using jhedgostBK.Modules.EmployeeTestimonials.Domain.IRepository;
 
 namespace jhedgostBK.Modules.EmployeeTestimonials.Application.Adapter;
 
